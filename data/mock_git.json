@@ -1,0 +1,452 @@
+{
+ "payment-worker": {
+  "branches": [
+   "main",
+   "release/2.4",
+   "hotfix/retry",
+   "feature/queue-v2"
+  ],
+  "commits": [
+   {
+    "sha": "e8e46b3",
+    "author": "meera",
+    "message": "add idempotency key",
+    "ts": "2026-11-19T10:00:00",
+    "files": 8
+   },
+   {
+    "sha": "8acfd4d",
+    "author": "asha",
+    "message": "bump timeout",
+    "ts": "2026-11-19T01:00:00",
+    "files": 3
+   },
+   {
+    "sha": "94be6d9",
+    "author": "meera",
+    "message": "bump timeout",
+    "ts": "2026-11-18T16:00:00",
+    "files": 3
+   },
+   {
+    "sha": "4f1a84c",
+    "author": "meera",
+    "message": "patch error 5042 handler",
+    "ts": "2026-11-18T07:00:00",
+    "files": 3
+   },
+   {
+    "sha": "6e18b18",
+    "author": "asha",
+    "message": "patch error 5042 handler",
+    "ts": "2026-11-17T22:00:00",
+    "files": 3
+   },
+   {
+    "sha": "51476e8",
+    "author": "asha",
+    "message": "patch error 5042 handler",
+    "ts": "2026-11-17T13:00:00",
+    "files": 2
+   },
+   {
+    "sha": "2f237c4",
+    "author": "ravi",
+    "message": "bump timeout",
+    "ts": "2026-11-17T04:00:00",
+    "files": 1
+   },
+   {
+    "sha": "c3f38c8",
+    "author": "ravi",
+    "message": "refactor queue consumer",
+    "ts": "2026-11-16T19:00:00",
+    "files": 7
+   },
+   {
+    "sha": "4da838b",
+    "author": "ravi",
+    "message": "add idempotency key",
+    "ts": "2026-11-16T10:00:00",
+    "files": 3
+   },
+   {
+    "sha": "c7739d4",
+    "author": "asha",
+    "message": "fix retry backoff",
+    "ts": "2026-11-16T01:00:00",
+    "files": 3
+   },
+   {
+    "sha": "2f4b8be",
+    "author": "asha",
+    "message": "patch error 5042 handler",
+    "ts": "2026-11-15T16:00:00",
+    "files": 5
+   },
+   {
+    "sha": "9b08e5a",
+    "author": "meera",
+    "message": "patch error 5042 handler",
+    "ts": "2026-11-15T07:00:00",
+    "files": 4
+   }
+  ],
+  "prs": [
+   {
+    "id": 100,
+    "title": "PR 100: cleanup",
+    "state": "open"
+   },
+   {
+    "id": 101,
+    "title": "PR 101: retry policy",
+    "state": "open"
+   },
+   {
+    "id": 102,
+    "title": "PR 102: retry policy",
+    "state": "open"
+   },
+   {
+    "id": 103,
+    "title": "PR 103: cleanup",
+    "state": "open"
+   },
+   {
+    "id": 104,
+    "title": "PR 104: retry policy",
+    "state": "open"
+   },
+   {
+    "id": 105,
+    "title": "PR 105: metrics",
+    "state": "open"
+   },
+   {
+    "id": 106,
+    "title": "PR 106: retry policy",
+    "state": "open"
+   },
+   {
+    "id": 107,
+    "title": "PR 107: cleanup",
+    "state": "open"
+   }
+  ],
+  "diffs": {
+   "e8e46b3": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "8acfd4d": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "94be6d9": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "4f1a84c": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "6e18b18": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "51476e8": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "2f237c4": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "c3f38c8": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "4da838b": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "c7739d4": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "2f4b8be": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "9b08e5a": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2"
+  }
+ },
+ "order-api": {
+  "branches": [
+   "main",
+   "release/2.4",
+   "hotfix/retry",
+   "feature/queue-v2"
+  ],
+  "commits": [
+   {
+    "sha": "c7a2b17",
+    "author": "ravi",
+    "message": "bump timeout",
+    "ts": "2026-11-19T10:00:00",
+    "files": 8
+   },
+   {
+    "sha": "b646e2b",
+    "author": "meera",
+    "message": "add idempotency key",
+    "ts": "2026-11-19T01:00:00",
+    "files": 3
+   },
+   {
+    "sha": "da25279",
+    "author": "ravi",
+    "message": "refactor queue consumer",
+    "ts": "2026-11-18T16:00:00",
+    "files": 8
+   },
+   {
+    "sha": "233408b",
+    "author": "asha",
+    "message": "bump timeout",
+    "ts": "2026-11-18T07:00:00",
+    "files": 4
+   },
+   {
+    "sha": "0840323",
+    "author": "ravi",
+    "message": "fix retry backoff",
+    "ts": "2026-11-17T22:00:00",
+    "files": 5
+   },
+   {
+    "sha": "f3402dd",
+    "author": "ravi",
+    "message": "bump timeout",
+    "ts": "2026-11-17T13:00:00",
+    "files": 4
+   },
+   {
+    "sha": "c1fda58",
+    "author": "asha",
+    "message": "fix retry backoff",
+    "ts": "2026-11-17T04:00:00",
+    "files": 3
+   },
+   {
+    "sha": "ed56a2a",
+    "author": "ravi",
+    "message": "patch error 5042 handler",
+    "ts": "2026-11-16T19:00:00",
+    "files": 8
+   },
+   {
+    "sha": "b017c53",
+    "author": "ravi",
+    "message": "refactor queue consumer",
+    "ts": "2026-11-16T10:00:00",
+    "files": 4
+   },
+   {
+    "sha": "6d744a0",
+    "author": "ravi",
+    "message": "fix retry backoff",
+    "ts": "2026-11-16T01:00:00",
+    "files": 7
+   },
+   {
+    "sha": "b85f164",
+    "author": "ravi",
+    "message": "refactor queue consumer",
+    "ts": "2026-11-15T16:00:00",
+    "files": 1
+   },
+   {
+    "sha": "8549425",
+    "author": "asha",
+    "message": "refactor queue consumer",
+    "ts": "2026-11-15T07:00:00",
+    "files": 8
+   }
+  ],
+  "prs": [
+   {
+    "id": 100,
+    "title": "PR 100: retry policy",
+    "state": "open"
+   },
+   {
+    "id": 101,
+    "title": "PR 101: retry policy",
+    "state": "open"
+   },
+   {
+    "id": 102,
+    "title": "PR 102: cleanup",
+    "state": "open"
+   },
+   {
+    "id": 103,
+    "title": "PR 103: cleanup",
+    "state": "open"
+   },
+   {
+    "id": 104,
+    "title": "PR 104: metrics",
+    "state": "open"
+   },
+   {
+    "id": 105,
+    "title": "PR 105: cleanup",
+    "state": "open"
+   },
+   {
+    "id": 106,
+    "title": "PR 106: retry policy",
+    "state": "open"
+   },
+   {
+    "id": 107,
+    "title": "PR 107: cleanup",
+    "state": "open"
+   }
+  ],
+  "diffs": {
+   "c7a2b17": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "b646e2b": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "da25279": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "233408b": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "0840323": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "f3402dd": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "c1fda58": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "ed56a2a": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "b017c53": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "6d744a0": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "b85f164": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "8549425": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2"
+  }
+ },
+ "inventory-sync": {
+  "branches": [
+   "main",
+   "release/2.4",
+   "hotfix/retry",
+   "feature/queue-v2"
+  ],
+  "commits": [
+   {
+    "sha": "632c817",
+    "author": "meera",
+    "message": "fix retry backoff",
+    "ts": "2026-11-19T10:00:00",
+    "files": 4
+   },
+   {
+    "sha": "4a8abb1",
+    "author": "ravi",
+    "message": "refactor queue consumer",
+    "ts": "2026-11-19T01:00:00",
+    "files": 5
+   },
+   {
+    "sha": "c60fb25",
+    "author": "ravi",
+    "message": "refactor queue consumer",
+    "ts": "2026-11-18T16:00:00",
+    "files": 3
+   },
+   {
+    "sha": "6c267b5",
+    "author": "ravi",
+    "message": "patch error 5042 handler",
+    "ts": "2026-11-18T07:00:00",
+    "files": 1
+   },
+   {
+    "sha": "b0a0c1c",
+    "author": "meera",
+    "message": "bump timeout",
+    "ts": "2026-11-17T22:00:00",
+    "files": 8
+   },
+   {
+    "sha": "d473e68",
+    "author": "meera",
+    "message": "refactor queue consumer",
+    "ts": "2026-11-17T13:00:00",
+    "files": 2
+   },
+   {
+    "sha": "b8ff615",
+    "author": "meera",
+    "message": "fix retry backoff",
+    "ts": "2026-11-17T04:00:00",
+    "files": 3
+   },
+   {
+    "sha": "c75aec9",
+    "author": "meera",
+    "message": "patch error 5042 handler",
+    "ts": "2026-11-16T19:00:00",
+    "files": 3
+   },
+   {
+    "sha": "64a0053",
+    "author": "ravi",
+    "message": "add idempotency key",
+    "ts": "2026-11-16T10:00:00",
+    "files": 8
+   },
+   {
+    "sha": "0660a3e",
+    "author": "asha",
+    "message": "refactor queue consumer",
+    "ts": "2026-11-16T01:00:00",
+    "files": 4
+   },
+   {
+    "sha": "e1eeb1f",
+    "author": "ravi",
+    "message": "fix retry backoff",
+    "ts": "2026-11-15T16:00:00",
+    "files": 5
+   },
+   {
+    "sha": "52f6908",
+    "author": "meera",
+    "message": "bump timeout",
+    "ts": "2026-11-15T07:00:00",
+    "files": 2
+   }
+  ],
+  "prs": [
+   {
+    "id": 100,
+    "title": "PR 100: retry policy",
+    "state": "open"
+   },
+   {
+    "id": 101,
+    "title": "PR 101: retry policy",
+    "state": "open"
+   },
+   {
+    "id": 102,
+    "title": "PR 102: cleanup",
+    "state": "open"
+   },
+   {
+    "id": 103,
+    "title": "PR 103: metrics",
+    "state": "open"
+   },
+   {
+    "id": 104,
+    "title": "PR 104: cleanup",
+    "state": "open"
+   },
+   {
+    "id": 105,
+    "title": "PR 105: metrics",
+    "state": "open"
+   },
+   {
+    "id": 106,
+    "title": "PR 106: retry policy",
+    "state": "open"
+   },
+   {
+    "id": 107,
+    "title": "PR 107: cleanup",
+    "state": "open"
+   }
+  ],
+  "diffs": {
+   "632c817": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "4a8abb1": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "c60fb25": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "6c267b5": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "b0a0c1c": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "d473e68": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "b8ff615": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "c75aec9": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "64a0053": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "0660a3e": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "e1eeb1f": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2",
+   "52f6908": "--- a/worker.py\n+++ b/worker.py\n@@ -10,3 +10,4 @@\n- retries = 1\n+ retries = 3\n+ backoff = 2"
+  }
+ }
+}
